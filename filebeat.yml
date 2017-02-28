@@ -1,0 +1,24 @@
+output:
+  logstash:
+    enabled: true
+    hosts:
+      - ${LOGSTASH_HOST}:${LOGSTASH_PORT}
+    timeout: 15
+
+filebeat:
+  prospectors:
+    -
+      paths:
+        - /opt/magento/var/log/*.log
+      document_type: logs
+      fields:
+          project_name: ${PROJECT_NAME}
+          project_env: ${PROJECT_ENV}
+    -
+      paths:
+        - /opt/magento/var/report/*
+      document_type: report
+      fields:
+          project_name: ${PROJECT_NAME}
+          project_env: ${PROJECT_ENV}
+
