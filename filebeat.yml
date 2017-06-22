@@ -1,6 +1,6 @@
 output:
   elasticsearch:
-    hosts: [${ELASTICSEARCH_HOST}:${ELASTICSEARCH_PORT}]
+    hosts: ["${ELASTICSEARCH_PATH}:${ELASTICSEARCH_PORT}"]
 
 filebeat:
   prospectors:
