@@ -13,7 +13,7 @@ filebeat:
           project_env: ${PROJECT_ENV}
     -
       paths:
-        - /opt/magento/var/report/*
+        - ${PROJECT_PATH}/var/report/*
       document_type: report
       fields:
           project_name: ${PROJECT_NAME}
