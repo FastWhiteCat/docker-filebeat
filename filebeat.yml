@@ -18,4 +18,3 @@ filebeat:
       fields:
           project_name: ${PROJECT_NAME}
           project_env: ${PROJECT_ENV}
-
