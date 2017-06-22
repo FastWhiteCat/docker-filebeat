@@ -20,6 +20,7 @@ RUN curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-${
 ###############################################################################
 
 ADD filebeat.yml /etc/filebeat/filebeat.yml
+ADD GeoLiteCity.dat /usr/share/GeoIP/GeoLiteCity.dat
 
 ###############################################################################
 #                                    START
