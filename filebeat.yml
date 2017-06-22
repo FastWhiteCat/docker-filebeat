@@ -9,12 +9,19 @@ filebeat:
         - ${PROJECT_PATH}/var/log/*.log
       document_type: logs
       fields:
-          project_name: ${PROJECT_NAME}
+          project_name: ${PROJECT_NAME_1}
           project_env: ${PROJECT_ENV}
     -
       paths:
         - ${PROJECT_PATH}/var/report/*
       document_type: report
       fields:
-          project_name: ${PROJECT_NAME}
+          project_name: ${PROJECT_NAME_2}
+          project_env: ${PROJECT_ENV}
+    -
+      paths:
+        - ${PROJECT_PATH}/app/logs/*
+      document_type: logs
+      fields:
+          project_name: ${PROJECT_NAME_3}
           project_env: ${PROJECT_ENV}
