@@ -16,14 +16,28 @@ filebeat:
         - ${PROJECT_PATH}/var/report/*
       document_type: report
       fields:
-          project_name: ${PROJECT_NAME_2}
+          project_name: ${PROJECT_NAME_1}
+          project_env: ${PROJECT_ENV}
+    -
+      paths:
+        - /var/log/nginx/error.log
+      document_type: nginx-error
+      fields:
+          project_name: ${PROJECT_NAME_1}
+          project_env: ${PROJECT_ENV}
+    -
+      paths:
+        - /var/log/nginx/access.log
+      document_type: nginx-access
+      fields:
+          project_name: ${PROJECT_NAME_1}
           project_env: ${PROJECT_ENV}
     -
       paths:
         - ${PROJECT_PATH}/app/logs/*
       document_type: logs
       fields:
-          project_name: ${PROJECT_NAME_3}
+          project_name: ${PROJECT_NAME_2}
           project_env: ${PROJECT_ENV}
 
 shipper:
